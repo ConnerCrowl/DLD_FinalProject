@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-    int size = 8;
+    int size = 16;
     for(int i = 0; i < size; i++){
         for(int j = 0; j < size; j++){
             if(i==0){//IS FIRST ROW?
