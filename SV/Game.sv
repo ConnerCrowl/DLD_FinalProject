@@ -12,7 +12,7 @@ datapath evolve (dadaIn, dadaOut);
 
 mux2 #(64) muxxy (gridOut, seed, reset, dadaIn);
 
-
+flop #(63) floppy (dadaOut, gridOut);
 
 
 endmodule
