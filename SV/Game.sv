@@ -1,4 +1,4 @@
-module Game(clk, reset, seed, gridOut)
+module Game(clk, reset, selector, seed, gridOut)
 
 input logic clk;
 input logic reset;

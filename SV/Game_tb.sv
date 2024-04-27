@@ -5,6 +5,7 @@ module tb ();
    logic [63:0] gridOut;
    logic       clk;
    logic       reset;
+   logic       selector;
 
    
   // instantiate device under test
@@ -21,9 +22,7 @@ module tb ();
      begin
 	#0  reset = 1'b1;
 	#0  sel = 1'b0;
-	#0  seed = 64'b0             
-     
-          ;
+	#0  seed = 64'b0;          
 	#22 reset = 1'b0;
 	#71 sel = 1'b1;		
      end
