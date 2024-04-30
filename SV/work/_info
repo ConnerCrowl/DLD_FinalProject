@@ -1,0 +1,241 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.3 2021.07, Jul 13 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Conner Crowl/OneDrive/Desktop/DLD_Folder/DLD_FinalProject/SV
+T_opt
+!s110 1714513679
+V8N`E;hA9nzNHR2G`EojzO2
+04 2 4 work tb fast 0
+=1-286b3542fa63-6631670e-286-2c80
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.3;73
+vdatapath
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1714513677
+!i10b 1
+!s100 V;C_hS8f1BHnb36LBjYJ01
+I<ahlD=61ndBBilL@NE8dL1
+S1
+R0
+Z4 w1714508393
+Z5 8datapath.sv
+Z6 Fdatapath.sv
+!i122 0
+L0 7 79
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.3;73
+r1
+!s85 0
+31
+Z9 !s108 1714513677.000000
+Z10 !s107 Game_tb.sv|datapath.sv|MainFlop.sv|MainMux.sv|Game.sv|
+Z11 !s90 -reportprogress|300|Game.sv|MainMux.sv|MainFlop.sv|datapath.sv|Game_tb.sv|
+!i113 0
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vevolve3
+R2
+R3
+!i10b 1
+!s100 IXoNo]gEC0MZaJ37;nO_30
+IM8klP?6AAQElYj^^>dMog1
+S1
+R0
+R4
+R5
+R6
+!i122 0
+L0 88 14
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+vevolve5
+R2
+R3
+!i10b 1
+!s100 I^MlKOK_W3OeeJBMAXc:W2
+I:N2@j2?Hz8T^_^8H8DMB42
+S1
+R0
+R4
+R5
+R6
+!i122 0
+L0 103 17
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+vevolve8
+R2
+R3
+!i10b 1
+!s100 X=VQ5`4bnRg0]4e9c_9PV1
+I9=CLF7`lSL3IgfFX:JW2G3
+S1
+R0
+R4
+R5
+R6
+!i122 0
+L0 122 23
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+vGame
+R2
+R3
+!i10b 1
+!s100 aZ<_^cAVW[VUTE=B]zJXz1
+I2X1OhSaX10[@=gkRWO`Nl2
+S1
+R0
+w1714513621
+8Game.sv
+FGame.sv
+!i122 0
+L0 1 25
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+n@game
+vMainFlop
+R2
+R3
+!i10b 1
+!s100 Uo^f=AQOJZN`;Lb^Tl>JE3
+I]d[PT6[U>X>fQZ>LzObYS2
+S1
+R0
+w1714512481
+8MainFlop.sv
+FMainFlop.sv
+!i122 0
+L0 2 9
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+n@main@flop
+vMainMux
+R2
+R3
+!i10b 1
+!s100 ?]:0`T9lgSf>dQ[h6=c^>1
+Ig]Sli5j`WHA[Fo6f;CRFf1
+S1
+R0
+w1714512309
+8MainMux.sv
+FMainMux.sv
+!i122 0
+L0 1 9
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+n@main@mux
+vrules
+R2
+R3
+!i10b 1
+!s100 JL3^U4`<X^MUIi:l8LemW2
+IBcFBl4c5NRZOko>2=jFA93
+S1
+R0
+R4
+R5
+R6
+!i122 0
+L0 147 9
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+vtb
+R2
+R3
+!i10b 1
+!s100 mUKmJnlkMhzPnze[BW;AG2
+IH@Ke`=mhBnHi^ZQf[g;TF0
+S1
+R0
+w1714513587
+8Game_tb.sv
+FGame_tb.sv
+!i122 0
+L0 4 31
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
