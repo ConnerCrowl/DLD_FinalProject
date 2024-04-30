@@ -1,19 +1,21 @@
-module Game(clk, reset, selector, seed, gridOut)
+module Game(clk, reset, lfsr_rand, seed, gridOut)
 
 input logic clk;
 input logic reset;
-input logic selector;
+input logic lfsr_rand;
 input logic [63:0] seed;
 output logic [63:0] gridOut;
 
-logic [63:0] dadaIn;
-logic [63:0] dadaOut;
+logic [63:0] shift_seed;
+logic [63:0] grid;
 
-datapath evolve (dadaIn, dadaOut);
+lfsr toMux (seed, clk, reset, shift_seed);
 
-mux2 #(64) muxxy (gridOut, seed, selector, dadaIn);
+mux2 #(64) muxxy (gridOut, shift_seed, lfsr_rand, grid);
 
-flop #(64) floppy (dadaOut, gridOut);
+datapath evolve (shift_seed, grid);
+
+flop #(64) floppy (grid_evo, gridOut);
 
 
 endmodule

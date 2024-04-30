@@ -6,12 +6,12 @@ module tb ();
   integer handle3;
   integer desc3;
    // instantiate device under test (small LFSR)
-  logic[15:0]seed_sm;
+  logic[64:0]seed_sm;
   logic clk;
   logic reset;
-  logic[15:0]shift_seed_sm;
+  logic[64:0]shift_seed;
    //create file handles to write results to a file
-  lfsr dut (seed_sm,clk,reset,shift_seed_sm);   
+  lfsr dut (seed,clk,reset,shift_seed);   
    
    //set up a clock signal
    always     
@@ -33,7 +33,7 @@ module tb ();
  always 
      begin
 	desc3 = handle3;
-	#5 $fdisplay(desc3, "%b || %b", reset, shift_seed_sm); 
+	#5 $fdisplay(desc3, "%b || %b", reset, shift_seed); 
      end   
    
 	//set up any book keeping variables you may want to use
@@ -42,7 +42,7 @@ module tb ();
      assign seed_sm = 64'h0 00_06_76_00_04_64_64_00;
 
 	//reset your DUT
-     lfsr dut (seed_sm,clk,reset,shift_seed_sm);   
+     lfsr dut (seed,clk,reset,shift_seed);   
 	//save the initial output of your DUT to compare with current output
 
 	//and see whenb you repeat
