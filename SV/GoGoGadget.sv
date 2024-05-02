@@ -1,4 +1,4 @@
-module GoGoGadget (clk, fsmReset, randSwitch, startSwitch, seed, gridOut, shift_seed);
+module GoGoGadget (clk, fsmReset, randSwitch, startSwitch, seed, gridOut);
 
 input logic clk;
 input logic randSwitch;
@@ -7,7 +7,8 @@ input logic fsmReset;
 input logic [63:0] seed;
 
 output logic [63:0] gridOut;
-output logic [63:0] shift_seed;
+
+logic [63:0] shift_seed;
 
 logic flopreset;
 logic giveSeed;

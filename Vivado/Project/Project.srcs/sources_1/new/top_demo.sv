@@ -65,8 +65,8 @@ module top_demo
     clk_div clockeeven (sysclk_125mhz, btn[0], clk_en);
 
   // Place Conway Game of Life instantiation here
-  GoGoGadget GoGoGadget (clk_en, sw[2], sw[1], sw[0], seed, gridOut, shift_seed);
-  //GoGoGadget GoGoGadget (clk, fsmReset, randSwitch, startSwitch, seed, gridOut, shift_seed);
+  GoGoGadget GoGoGadget (clk_en, sw[2], sw[1], sw[0], seed, gridOut);
+  //GoGoGadget GoGoGadget (clk, fsmReset, randSwitch, startSwitch, seed, gridOut);
 
   // HDMI
   // logic hdmi_out_en;
