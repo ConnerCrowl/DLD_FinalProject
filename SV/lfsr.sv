@@ -1,4 +1,4 @@
-module lfsr(seed, clk, reset, shift_seed);
+module lfsr16(seed_sm, clk, reset, shift_seed_sm);
 //inputs and outputs for a smaller implementation
 input logic [15:0] seed_sm;
 input logic clk;

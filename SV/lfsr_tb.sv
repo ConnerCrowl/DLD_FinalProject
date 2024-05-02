@@ -6,56 +6,61 @@ module tb ();
   integer handle3;
   integer desc3;
    // instantiate device under test (small LFSR)
-  logic[64:0]seed;
+  logic[15:0]seed_sm;
   logic clk;
   logic reset;
-  logic[64:0]shift_seed;
+  logic[15:0]shift_seed_sm;
    //create file handles to write results to a file
-  lfsr16 dut (seed,clk,reset,shift_seed);   
+  lfsr16 dut (seed_sm,clk,reset,shift_seed_sm);   
    
    //set up a clock signal
    always     
      begin
 	clk = 1; 
-     #1; 
+     #10; 
      clk = 0; 
-     #1;
+     #10;
      end
    
-   initial
+//Actual test bench portion
+initial 
      begin
+          #0 seed_sm = 16'h 0001;
+          #0 reset = 0;
+          #20 reset = 1;
+          #20 reset = 0;
+     end
+
+
+   initial
 	//set up output file
-  initial
+  
      begin
 	// Gives output file name
 	handle3 = $fopen("State.out");
 	// Tells when to finish simulation
-	#500 $finish;		
+	#1310780 $finish;		
      end
 
  always 
      begin
 	desc3 = handle3;
-	#5 $fdisplay(desc3, "%b || %b", reset, shift_seed); 
+	#20 $fdisplay(desc3, "%b || %b", reset, shift_seed_sm); 
      end   
    
-	//set up any book keeping variables you may want to use
-          //Book keeping variables for why?
-
 	//set up a starting seed.  What happens with all 0s?
-     assign seed_sm = 64'h 00_06_76_00_04_64_64_00;
+     //assign seed_sm = 64'h 00_06_76_00_04_64_64_00;
 
      //When you set up the starting seed with 0s (and you are XORing for your shifts), you will be in a "lock out state"
      //When you set up the starting seed with 1s (and you are XNORing for your shifts), you will be in a "lock out state"
 
 	//reset your DUT
-     lfsr16 dut (seed,clk,reset,shift_seed);   
+        
 	//save the initial output of your DUT to compare with current output
 
      //Look at where we are and ask if we are in the right order/what we are missing so that we can get to testing
 
 	//and see when you repeat
-     end
 
    always @(posedge clk)
      begin

@@ -9,7 +9,7 @@ if [file exists work] {
 vlib work
 
 # compile source files
-vlog lfsr.sv
+vlog lfsr.sv lfsr_tb.sv
 
 # start and run simulation
 vsim -voptargs=+acc work.tb
@@ -22,9 +22,9 @@ view wave
 # add wave -hex -r /tb/*
 
 add wave -hex /tb/dut/clk
-add wave -hex /tb/dut/seed
+add wave -hex /tb/dut/shift_seed_sm
 add wave -hex /tb/dut/reset
-add wave -hex /tb/dut/seed
+add wave -hex /tb/dut/seed_sm
 
 add list -hex -r /tb/*
 add log -r /*
@@ -42,6 +42,6 @@ configure wave -rowmargin 4
 configure wave -childrowmargin 2
 
 -- Run the Simulation
-run 400 ns
+run 1310790 ns
 
 
