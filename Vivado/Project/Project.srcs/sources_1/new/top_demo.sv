@@ -54,22 +54,36 @@ module top_demo
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
    
+ //Logic
+    logic clk_en;
+    logic [63:0] seed;
+    assign seed = 64'h0000000000007000;
+
+    logic [63:0] shift_seed;
+    logic [63:0] gridOut;
+
+    clk_div cleeven (sysclk_125mhz, btn[0], clk_en);
+
   // Place Conway Game of Life instantiation here
- 
+  GoGoGadget GoGoGadget (clk_en, sw[2], sw[1], sw[0], seed, gridOut, shift_seed);
+  //GoGoGadget GoGoGadget (clk, fsmReset, randSwitch, startSwitch, seed, gridOut, shift_seed);
+
   // HDMI
   // logic hdmi_out_en;
   //assign hdmi_out_en = 1'b0;
-  hdmi_top test (n2, sysclk_125mhz, hdmi_d_p, hdmi_d_n, hdmi_clk_p, 
+  hdmi_top test (gridOut, sysclk_125mhz, hdmi_d_p, hdmi_d_n, hdmi_clk_p, 
 		         hdmi_clk_n, hdmi_cec, hdmi_sda, hdmi_scl, hdmi_hpd);
+  //hdmi_top test (n2, sysclk_125mhz, hdmi_d_p, hdmi_d_n, hdmi_clk_p, 
+	//	         hdmi_clk_n, hdmi_cec, hdmi_sda, hdmi_scl, hdmi_hpd);
   
   // 7-segment display
   segment_driver driver(
   .clk(smol_clk),
   .rst(btn[3]),
-  .digit0(sw[3:0]),
-  .digit1(4'b0111),
-  .digit2(sw[7:4]),
-  .digit3(4'b1111),
+  .digit0(0),
+  .digit1(0),
+  .digit2(0),
+  .digit3(0),
   .decimals({1'b0, btn[2:0]}),
   .segment_cathodes({sseg_dp, sseg_cg, sseg_cf, sseg_ce, sseg_cd, sseg_cc, sseg_cb, sseg_ca}),
   .digit_anodes(sseg_an)
