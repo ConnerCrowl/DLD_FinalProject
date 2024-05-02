@@ -54,15 +54,15 @@ module top_demo
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
    
- //Logic
+ //OUR STUFF
     logic clk_en;
     logic [63:0] seed;
-    assign seed = 64'h0000000000007000;
+    assign seed = 64'h0000000000007000; // This will be the line of 3
 
     logic [63:0] shift_seed;
     logic [63:0] gridOut;
 
-    clk_div cleeven (sysclk_125mhz, btn[0], clk_en);
+    clk_div clockeeven (sysclk_125mhz, btn[0], clk_en);
 
   // Place Conway Game of Life instantiation here
   GoGoGadget GoGoGadget (clk_en, sw[2], sw[1], sw[0], seed, gridOut, shift_seed);
