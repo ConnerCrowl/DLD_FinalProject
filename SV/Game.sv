@@ -1,4 +1,4 @@
-module Game(clk, flopreset, start, shift_seed, showgridOut, HDMIout);
+module Game(clk, flopreset, start, shift_seed, showgridOut, HDMIOut);
 
 input  logic clk;
 input  logic flopreset;
@@ -6,7 +6,7 @@ input  logic start;
 input  logic [63:0] shift_seed;
 input logic showgridOut;
 
-output logic  [63:0] HDMIout;
+output logic  [63:0] HDMIOut;
 
 logic [63:0] grid;
 logic [63:0] grid_evo;
@@ -18,7 +18,7 @@ logic [63:0] gridOut;
 
 MainMux muxxy (shift_seed, gridOut, start, grid);
 
-MainMux muxxy2 (shift_seed, gridOut, showgridOut, HDMIout);
+MainMux muxxy2 (shift_seed, gridOut, showgridOut, HDMIOut);
 
 datapath evolve (grid, grid_evo);
 

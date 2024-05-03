@@ -19,6 +19,6 @@ fsm FStevenM (clk, fsmReset, swA, swB, flopreset, giveSeed, start, showgridOut);
 
 lfsr64 shevifted (seed, clk, giveSeed, shift_seed);
 
-Game geeven (clk, flopreset, start, shift_seed,showgridOut, HDMIout);
+Game geeven (clk, flopreset, start, shift_seed,showgridOut, HDMIOut);
 
 endmodule
