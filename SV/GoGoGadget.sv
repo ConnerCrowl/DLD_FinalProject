@@ -1,12 +1,12 @@
-module GoGoGadget (clk, fsmReset, randSwitch, startSwitch, seed, gridOut);
+module GoGoGadget (clk, fsmReset, swA, swB, seed, HDMIOut);
 
 input logic clk;
-input logic randSwitch;
-input logic startSwitch;
+input logic swA;
+input logic swB;
 input logic fsmReset;
 input logic [63:0] seed;
 
-output logic [63:0] gridOut;
+output logic [63:0] HDMIOut;
 
 logic [63:0] shift_seed;
 
@@ -15,10 +15,10 @@ logic giveSeed;
 logic start;
 logic showgridOut;
 
-fsm FStevenM (clk, fsmreset, randSwitch, startSwitch, flopreset, giveSeed, start, showShift_seed);
+fsm FStevenM (clk, fsmReset, swA, swB, flopreset, giveSeed, start, showgridOut);
 
 lfsr64 shevifted (seed, clk, giveSeed, shift_seed);
 
-Game geeven (clk, shift_seed, showShift_seed, start, flopreset, gridOut);
+Game geeven (clk, flopreset, start, shift_seed,showgridOut, HDMIout);
 
 endmodule
