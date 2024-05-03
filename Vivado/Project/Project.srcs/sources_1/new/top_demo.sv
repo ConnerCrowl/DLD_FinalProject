@@ -57,21 +57,21 @@ module top_demo
  //OUR STUFF
     logic clk_en;
     logic [63:0] seed;
-    assign seed = 64'h0000000000007000; // This will be the line of 3
+    assign seed = 64'h0000000000070000; // This will be the line of 3
 
-    logic [63:0] shift_seed;
-    logic [63:0] gridOut;
+//    logic [63:0] shift_seed;
+    logic [63:0] HDMIout;
 
     clk_div clockeeven (sysclk_125mhz, btn[0], clk_en);
 
   // Place Conway Game of Life instantiation here
-  GoGoGadget GoGoGadget (clk_en, sw[2], sw[1], sw[0], seed, gridOut);
+  GoGoGadget GoGoGadget (clk_en, sw[2], sw[1], sw[0], seed, HDMIout);
   //GoGoGadget GoGoGadget (clk, fsmReset, randSwitch, startSwitch, seed, gridOut);
 
   // HDMI
   // logic hdmi_out_en;
   //assign hdmi_out_en = 1'b0;
-  hdmi_top test (gridOut, sysclk_125mhz, hdmi_d_p, hdmi_d_n, hdmi_clk_p, 
+  hdmi_top test (HDMIout, sysclk_125mhz, hdmi_d_p, hdmi_d_n, hdmi_clk_p, 
 		         hdmi_clk_n, hdmi_cec, hdmi_sda, hdmi_scl, hdmi_hpd);
   //hdmi_top test (n2, sysclk_125mhz, hdmi_d_p, hdmi_d_n, hdmi_clk_p, 
 	//	         hdmi_clk_n, hdmi_cec, hdmi_sda, hdmi_scl, hdmi_hpd);

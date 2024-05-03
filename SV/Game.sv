@@ -4,12 +4,12 @@ input  logic clk;
 input  logic flopreset;
 input  logic start;
 input  logic [63:0] shift_seed;
-output logic  [63:0] HDMIout;
+input logic showgridOut;
 
+output logic  [63:0] HDMIout;
 
 logic [63:0] grid;
 logic [63:0] grid_evo;
-input logic showgridOut;
 logic [63:0] gridOut;
 
 //lfsr toMux (seed, clk, reset, shift_seed);
@@ -18,7 +18,7 @@ logic [63:0] gridOut;
 
 MainMux muxxy (shift_seed, gridOut, start, grid);
 
-OtherMux muxxy2 (shift_seed, gridOut, showgridOut, HDMIout);
+MainMux muxxy2 (shift_seed, gridOut, showgridOut, HDMIout);
 
 datapath evolve (grid, grid_evo);
 

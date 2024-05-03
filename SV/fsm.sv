@@ -1,9 +1,9 @@
 module fsm (clk, fsmReset, randSwitch, startSwitch, flopreset, giveSeed, muxStart, showShift_seed);
 
    input logic clk;
-   input logic randSwitch;
-   input logic startSwitch;
-   input logic fsmReset;
+   input logic randSwitch; //switch 0
+   input logic startSwitch;//switch 1
+   input logic fsmReset;//switch 2
 
    output logic flopreset;
    output logic giveSeed;
